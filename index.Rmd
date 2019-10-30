@@ -6,9 +6,11 @@ output:
     toc_float: true
 ---
 
-## This is Nora's Awesome Website!
+## Welcome to Nora's awesome website!
 
 #### Here's What I Look Like:
 ![](images/Nora.jpg)
 
 You can learn more about me [here](about-me.html).
+
+
