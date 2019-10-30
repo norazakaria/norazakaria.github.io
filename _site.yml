@@ -13,4 +13,4 @@ navbar:
       href: https://www.linkedin.com/in/nora-zakaria-73804ba7/
 output:
   html_document:
-    theme: cerulean
+    theme: flatly

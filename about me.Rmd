@@ -8,7 +8,7 @@ output:
 
 My name is Nora Zakaria and I am a student at Columbia University Mailman School of Public Health studying Epidemiology and Health Policy and Practice. I am committed to alleviating health inequities through transformational health policy, innovative delivery systems, and increasing access to care. 
 
-#### Academic and Professional Experience:
+### Academic and Professional Experience:
 ![](images/Nora Zakaria Data Science Resume.jpg)
 
 #### To Keep Up With Healthcare News and Developments:
