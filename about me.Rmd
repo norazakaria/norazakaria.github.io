@@ -7,5 +7,11 @@ output:
     theme: cerulean
 ---
 
-Here's a glance into my academic and professional experiences:
+My name is Nora Zakaria and I am a student at Columbia University Mailman School of Public Health studying Epidemiology and Health Policy and Practice. I am committed to alleviating health inequities through transformational health policy, innovative delivery systems, and increasing access to care. 
+
+#### Academic and Professional Experience:
 ![](images/Nora Zakaria Data Science Resume.jpg)
+
+#### To Keep Up With Healthcare News and Developments:
+Check out publications from the [Kaiser Family Foundation](https://www.kff.org) and [Mathematica](https://www.mathematica.org/evidence/publications#sort=%40fmprcomputedcontentdate66491%20descending).
+
