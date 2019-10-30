@@ -7,4 +7,5 @@ output:
     theme: cerulean
 ---
 
-![](images/Nora Zakaria Data Science Resume.pdf)
+Here's a glance into my academic and professional experiences:
+![](images/Nora Zakaria Data Science Resume.jpg)

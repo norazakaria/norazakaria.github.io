@@ -11,3 +11,5 @@ output:
 
 ### Here's What I Look Like:
 ![](images/Nora.jpg)
+
+You can learn more about me [here](about-me.html).
