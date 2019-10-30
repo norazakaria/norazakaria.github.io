@@ -7,7 +7,7 @@ output:
     theme: cerulean
 ---
 
-# This is Nora's awesome website!
+# This is Nora's Awesome Website!
 
 ### Here's What I Look Like:
 ![](images/Nora.jpg)
