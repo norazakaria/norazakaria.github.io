@@ -6,10 +6,19 @@ output:
     toc_float: true
 ---
 
-## Welcome to Nora's awesome website!
+
+### Welcome to Nora's awesome website!
+
+
+My name is Nora Zakaria and I am a public Health student at the Columbia University Mailman School of Public Health.
 
 #### Here's What I Look Like:
 ![](images/Nora.jpg)
+
+_Current Resident of_: New York, NY
+
+_Hometown_: San Luis Obispo, CA
+
 
 You can learn more about me [here](about-me.html).
 
