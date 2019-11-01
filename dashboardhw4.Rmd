@@ -1,0 +1,70 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(viridis)
+library(p8105.datasets)
+library(tidyverse)
+library(ggridges)
+```
+
+```{r include=FALSE}
+coast_df = 
+  rnoaa::meteo_pull_monitors(c("USW00094728", "USW00023272", "USC00519397"),
+                      var = c("PRCP", "TMIN", "TMAX"), 
+                      date_min = "2017-01-01",
+                      date_max = "2017-12-31") %>%
+  mutate(
+    name = recode(id, USW00094728 = "CentralPark_NY", 
+                      USW00023272 = "SanFrancisco_CA",
+                      USC00519397 = "Waikiki_HA"),
+    tmin = tmin / 10,
+    tmax = tmax / 10,
+    date = as.Date(date, "%Y-%m-%d"),
+    date_month = as.numeric(format(date, "%m")),
+    month = as.factor(date_month),
+    month = fct_recode(month,
+                       "Jan" = "1", "Feb" = "2", "Mar" = "3", "Apr" = "4", "May" = "5", "June" = "6",
+                       "July" = "7", "Aug" = "8", "Sept" = "9", "Oct" = "10", "Nov" = "11", "Dec" = "12")) %>%
+  select(name, id, everything())
+coast_df
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Maximum and Minimum Temperatures in NYC, SF, and Hawaii
+
+```{r warning = FALSE}
+coast_df %>%
+plot_ly(x = ~tmin, y= ~tmax, type = "scatter", mode = "markers",
+        color = ~name, text = ~prcp, alpha = 0.5)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Maximum Temperatures
+
+```{r}
+coast_df %>%
+plot_ly(y= ~tmax, color = ~name, type = "box",
+         colors="Set2")
+```
+
+### Precipitation by Month
+
+```{r}
+coast_df %>%
+  plot_ly(x = ~month, y = ~prcp, color = ~name, type = "bar")
+```
+
