@@ -2,13 +2,14 @@
 title: "Plotly"
 output: 
   html_document:
+    code_folding: hide
     toc: true
     toc_float: true
 ---
 
 I can program in R! Here are some examples of _interactive graphics_.
 
-```{r}
+```{r message=FALSE}
 library(tidyverse)
 library(plotly)
 library(viridis)
@@ -17,16 +18,17 @@ library(tidyverse)
 library(ggridges)
 ```
 
-## Plots Using New York National Oceanic and Atmospheric Association Data (NOAA)
-```{r}
+## 2017 NY National Oceanic and Atmospheric Association Data
+```{r message=FALSE}
 coast_df = 
-  rnoaa::meteo_pull_monitors(c("USW00094728", "USW00023272"),
+  rnoaa::meteo_pull_monitors(c("USW00094728", "USW00023272", "USC00519397"),
                       var = c("PRCP", "TMIN", "TMAX"), 
                       date_min = "2017-01-01",
                       date_max = "2017-12-31") %>%
   mutate(
     name = recode(id, USW00094728 = "CentralPark_NY", 
-                      USW00023272 = "SanFrancisco_CA"),
+                      USW00023272 = "SanFrancisco_CA",
+                      USC00519397 = "Waikiki_HA"),
     tmin = tmin / 10,
     tmax = tmax / 10,
     date = as.Date(date, "%Y-%m-%d"),
@@ -39,19 +41,25 @@ coast_df =
 coast_df
 ```
 
-```{r}
+### Boxplot
+Maximum Temperature in NYC, SF, and Hawaii
+```{r warning = FALSE}
 coast_df %>%
 plot_ly(y= ~tmax, color = ~name, type = "box",
          colors="Set2")
 ```
 
-```{r}
+### Scatterplot
+Maximum and Minimum Temperatures in NYC, SF, and Hawaii
+```{r warning = FALSE}
 coast_df %>%
 plot_ly(x = ~tmin, y= ~tmax, type = "scatter", mode = "markers",
         color = ~name, text = ~prcp, alpha = 0.5)
 ```
 
-```{r}
+### Bar Graph
+Precipitation in NYC, SF, and Hawaii by Month
+```{r warning = FALSE}
 coast_df %>%
   plot_ly(x = ~month, y = ~prcp, color = ~name, type = "bar")
 ```
